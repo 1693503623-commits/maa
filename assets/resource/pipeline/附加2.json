@@ -1,0 +1,405 @@
+{
+    "$__mpe_config_附加2": {
+        "$__mpe_code": {
+            "prefix": "",
+            "coordinateMode": "absolute-v1",
+            "savedViewport": {
+                "x": 234,
+                "y": -328,
+                "zoom": 0.46
+            },
+            "filename": "附加2",
+            "version": "v1.8.1"
+        }
+    },
+    "开始比价流程": {
+        "next": [
+            "比价_阶段1_普通_进商品"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 42,
+                "y": 751
+            }
+        }
+    },
+    "比价_阶段1_普通_进商品": {
+        "max_hit": 3,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    25,
+                    196,
+                    675,
+                    1376
+                ],
+                "expected": [
+                    "已售\\d000\\+件"
+                ],
+                "index": 1
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "比价_阶段1_普通_滑动"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 337,
+                "y": 815
+            }
+        }
+    },
+    "比价_阶段1_普通_滑动": {
+        "pre_delay": 2000,
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    360,
+                    1000,
+                    0,
+                    0
+                ],
+                "end": [
+                    [
+                        360,
+                        400,
+                        0,
+                        0
+                    ]
+                ]
+            }
+        },
+        "repeat": 3,
+        "repeat_delay": 2000,
+        "next": [
+            "比价_阶段1_普通_返回"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 607,
+                "y": 879
+            }
+        }
+    },
+    "比价_阶段1_普通_返回": {
+        "action": {
+            "type": "Shell",
+            "param": {
+                "cmd": "input keyevent 4"
+            }
+        },
+        "post_delay": 1500,
+        "next": [
+            "比价_阶段1_列表翻页"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 898,
+                "y": 965
+            }
+        }
+    },
+    "比价_阶段1_列表翻页": {
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    360,
+                    1000,
+                    0,
+                    0
+                ],
+                "end": [
+                    [
+                        360,
+                        300,
+                        0,
+                        0
+                    ]
+                ]
+            }
+        },
+        "post_delay": 1500,
+        "next": [
+            "比价_阶段1_普通_进商品",
+            "比价_阶段2_高级_进商品"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1219,
+                "y": 805
+            }
+        }
+    },
+    "比价_阶段2_高级_进商品": {
+        "max_hit": 2,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    25,
+                    196,
+                    675,
+                    1376
+                ],
+                "expected": [
+                    "已售\\d+万\\+件"
+                ],
+                "index": 1
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "比价_阶段2_高级_滑动"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 307,
+                "y": 1243
+            }
+        }
+    },
+    "比价_阶段2_高级_滑动": {
+        "pre_delay": 2000,
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    360,
+                    1000,
+                    0,
+                    0
+                ],
+                "end": [
+                    [
+                        360,
+                        400,
+                        0,
+                        0
+                    ]
+                ]
+            }
+        },
+        "repeat": 6,
+        "repeat_delay": 2000,
+        "next": [
+            "比价_阶段2_高级_返回"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 598,
+                "y": 1285
+            }
+        }
+    },
+    "比价_阶段2_高级_返回": {
+        "action": {
+            "type": "Shell",
+            "param": {
+                "cmd": "input keyevent 4"
+            }
+        },
+        "post_delay": 1500,
+        "next": [
+            "比价_阶段2_列表翻页"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 924,
+                "y": 1383
+            }
+        }
+    },
+    "比价_阶段2_列表翻页": {
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    360,
+                    1000,
+                    0,
+                    0
+                ],
+                "end": [
+                    [
+                        360,
+                        300,
+                        0,
+                        0
+                    ]
+                ]
+            }
+        },
+        "post_delay": 1500,
+        "next": [
+            "比价_阶段2_高级_进商品",
+            "比价_阶段3_普通_进商品"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1209,
+                "y": 1247
+            }
+        }
+    },
+    "比价_阶段3_普通_进商品": {
+        "max_hit": 3,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    25,
+                    196,
+                    675,
+                    1376
+                ],
+                "expected": [
+                    "已售\\d000\\+件"
+                ],
+                "index": 1
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "比价_阶段3_普通_滑动"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 305,
+                "y": 1696
+            }
+        }
+    },
+    "比价_阶段3_普通_滑动": {
+        "pre_delay": 2000,
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    360,
+                    1000,
+                    0,
+                    0
+                ],
+                "end": [
+                    [
+                        360,
+                        400,
+                        0,
+                        0
+                    ]
+                ]
+            }
+        },
+        "repeat": 3,
+        "repeat_delay": 2000,
+        "next": [
+            "比价_阶段3_普通_返回"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 624,
+                "y": 1762
+            }
+        }
+    },
+    "比价_阶段3_普通_返回": {
+        "action": {
+            "type": "Shell",
+            "param": {
+                "cmd": "input keyevent 4"
+            }
+        },
+        "post_delay": 1500,
+        "next": [
+            "比价_阶段3_列表翻页"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 958,
+                "y": 1886
+            }
+        }
+    },
+    "比价_阶段3_列表翻页": {
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    360,
+                    1000,
+                    0,
+                    0
+                ],
+                "end": [
+                    [
+                        360,
+                        300,
+                        0,
+                        0
+                    ]
+                ]
+            }
+        },
+        "post_delay": 1500,
+        "next": [
+            "比价_阶段3_普通_进商品",
+            "比价_最后一次_返回置顶"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1236,
+                "y": 1754
+            }
+        }
+    },
+    "比价_最后一次_返回置顶": {
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    360,
+                    300,
+                    0,
+                    0
+                ],
+                "end": [
+                    [
+                        360,
+                        1000,
+                        0,
+                        0
+                    ]
+                ]
+            }
+        },
+        "repeat": 5,
+        "repeat_delay": 1000,
+        "next": [
+            "开始查找真实商品"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1523,
+                "y": 1737
+            }
+        }
+    },
+    "$__mpe_external_开始查找真实商品_附加2": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1814,
+                "y": 1794
+            }
+        }
+    }
+}

@@ -1,0 +1,210 @@
+{
+    "$__mpe_config_pay": {
+        "$__mpe_code": {
+            "prefix": "",
+            "coordinateMode": "absolute-v1",
+            "lastSyncTime": 1787562084783,
+            "isModifiedExternally": false,
+            "isDeleted": false,
+            "filePath": "D:\\MAA\\maa\\assets\\resource\\pipeline\\pay.json",
+            "savedViewport": {
+                "x": 38,
+                "y": 329,
+                "zoom": 0.37
+            },
+            "filename": "pay",
+            "version": "v1.8.1"
+        }
+    },
+    "下单": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    8,
+                    1462,
+                    705,
+                    139
+                ],
+                "template": [
+                    "支付.png"
+                ],
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 2000,
+        "next": [
+            "复制"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1036,
+                "y": 12
+            }
+        }
+    },
+    "发送脚本": {
+        "action": {
+            "type": "Command",
+            "param": {
+                "exec": "C:\\Users\\StellarAI\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+                "args": [
+                    "{RESOURCE_DIR}/send_wechat.py",
+                    "Kanbara"
+                ]
+            }
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 1549,
+                "y": 72
+            }
+        }
+    },
+    "复制": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    15,
+                    1275,
+                    704,
+                    324
+                ],
+                "expected": [
+                    "复制"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 2000,
+        "next": [
+            "发送脚本"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1293,
+                "y": 41
+            }
+        }
+    },
+    "支付": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "找亲友"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "下单"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 780,
+                "y": 85
+            }
+        }
+    },
+    "没找到_向上滑动2": {
+        "max_hit": 5,
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    356,
+                    1286,
+                    1,
+                    0
+                ],
+                "end": [
+                    [
+                        342,
+                        860,
+                        1,
+                        0
+                    ]
+                ]
+            }
+        },
+        "post_delay": 2000,
+        "next": [
+            "支付",
+            "没找到_向上滑动2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 524,
+                "y": 165
+            }
+        }
+    },
+    "规格": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    4,
+                    270,
+                    715,
+                    1219
+                ],
+                "expected": [
+                    "3瓶"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 2000,
+        "next": [
+            "支付",
+            "没找到_向上滑动2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 268,
+                "y": 55
+            }
+        }
+    },
+    "购买": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    4,
+                    1265,
+                    714,
+                    331
+                ],
+                "template": [
+                    "下单按钮.png"
+                ],
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "规格"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 12,
+                "y": 49
+            }
+        }
+    }
+}

@@ -38,5 +38,14 @@
     "[markdown]": {
         "editor.formatOnSave": true,
         "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
-    }
+    },
+    "markdown-preview-enhanced.fileWatcher.excludeGlob": [
+        "**/assets/resource/**/*",
+        "**/install/resource/**/*"
+    ],
+    "problems.exclude": [
+        {
+            "owner": "markdown-preview-enhanced"
+        }
+    ]
 }

@@ -1,0 +1,274 @@
+{
+    "$__mpe_config_search": {
+        "$__mpe_code": {
+            "prefix": "",
+            "coordinateMode": "absolute-v1",
+            "lastSyncTime": 1787563885642,
+            "isModifiedExternally": false,
+            "isDeleted": false,
+            "filePath": "D:\\MAA\\maa\\assets\\resource\\pipeline\\search.json",
+            "savedViewport": {
+                "x": -401,
+                "y": 185,
+                "zoom": 0.65
+            },
+            "filename": "search",
+            "version": "v1.8.1"
+        }
+    },
+    "$__mpe_external_购买_search": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1882,
+                "y": 319
+            }
+        }
+    },
+    "启动并等待": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    18,
+                    1486,
+                    701,
+                    115
+                ],
+                "expected": [
+                    "首页"
+                ]
+            }
+        },
+        "action": {
+            "type": "StartApp",
+            "param": {
+                "package": "com.ss.android.ugc.livelite"
+            }
+        },
+        "next": [
+            "点击搜索框"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 12,
+                "y": 192
+            }
+        }
+    },
+    "开始查找商品": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    21,
+                    17,
+                    688,
+                    300
+                ],
+                "expected": [
+                    "(销量|全部|直播)"
+                ]
+            }
+        },
+        "next": [
+            "没找到_向上滑动1",
+            "找到并点击商品"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1142,
+                "y": 190
+            }
+        }
+    },
+    "找到并点击商品": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "嘉旭"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": true,
+                "target_offset": [
+                    0,
+                    -248,
+                    0,
+                    0
+                ]
+            }
+        },
+        "next": [
+            "模拟浏览_滑动5次"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1384,
+                "y": 352
+            }
+        }
+    },
+    "模拟浏览_滑动5次": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "进店.png"
+                ],
+                "green_mask": true
+            }
+        },
+        "pre_delay": 2000,
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    332,
+                    1195,
+                    1,
+                    1
+                ],
+                "end": [
+                    [
+                        328,
+                        553,
+                        1,
+                        1
+                    ]
+                ]
+            }
+        },
+        "repeat": 5,
+        "repeat_delay": 1500,
+        "next": [
+            "购买"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1627,
+                "y": 92
+            }
+        }
+    },
+    "没找到_向上滑动1": {
+        "max_hit": 20,
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    332,
+                    1195,
+                    1,
+                    1
+                ],
+                "end": [
+                    [
+                        332,
+                        530,
+                        1,
+                        1
+                    ]
+                ]
+            }
+        },
+        "post_delay": 2000,
+        "next": [
+            "找到并点击商品",
+            "没找到_向上滑动1"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1392,
+                "y": -31
+            }
+        }
+    },
+    "点击搜索": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    547,
+                    18,
+                    173,
+                    187
+                ],
+                "expected": [
+                    "搜索"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "开始比价流程"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 745,
+                "y": 196
+            }
+        }
+    },
+    "点击搜索框": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    5,
+                    16,
+                    711,
+                    370
+                ],
+                "template": [
+                    "搜索框.png"
+                ],
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 2000,
+        "next": [
+            "输入"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 253,
+                "y": 161
+            }
+        }
+    },
+    "输入": {
+        "action": {
+            "type": "InputText",
+            "param": {
+                "input_text": "骨胶原软骨钙片"
+            }
+        },
+        "post_delay": 2000,
+        "next": [
+            "点击搜索"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 496,
+                "y": 189
+            }
+        }
+    },
+    "$__mpe_external_开始比价流程_search": {
+        "$__mpe_code": {
+            "position": {
+                "x": 754,
+                "y": 76
+            }
+        }
+    }
+}
