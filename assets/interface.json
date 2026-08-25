@@ -1,18 +1,13 @@
 {
     "interface_version": 2,
-    "name": "测试项目",
-    "description": "自动化测试",
+    "name": "极速代付小助手",
+    "description": "自动化比价、下单与微信代付系统",
     "contact": "联系方式",
-    "license": "MIT",
-    "welcome": "欢迎使用自动化工具",
+    "version": "1.0.0",
     "controller": [
         {
-            "name": "安卓端",
+            "name": "安卓手机",
             "type": "Adb",
-            "config": {
-                "adb_serial": "ZN22C24712B20A25",
-                "address": "ZN22C24712B20A25"
-            },
             "display_short_side": 720
         }
     ],
@@ -24,10 +19,113 @@
             ]
         }
     ],
+    "group": [
+        {
+            "name": "main_flow",
+            "label": "核心代付流程"
+        }
+    ],
     "task": [
         {
-            "name": "执行测试流程",
-            "entry": "启动并等待"
+            "name": "1. 切换账号 (预留)",
+            "entry": "切换账号节点",
+            "group": [
+                "main_flow"
+            ]
+        },
+        {
+            "name": "2. 主流程：自动比价与下单",
+            "entry": "启动并等待",
+            "group": [
+                "main_flow"
+            ],
+            "option": [
+                "商品名称输入",
+                "目标店铺输入",
+                "代付人选择"
+            ]
+        },
+        {
+            "name": "3. 自动好评 (预留)",
+            "entry": "好评入口节点",
+            "group": [
+                "main_flow"
+            ]
+        },
+        {
+            "name": "4. 关闭应用",
+            "entry": "关闭APP节点",
+            "group": [
+                "main_flow"
+            ]
         }
-    ]
+    ],
+    "option": {
+        "商品名称输入": {
+            "type": "text",
+            "title": "请输入商品名称",
+            "default": "骨胶原软骨钙片",
+            "pipeline_override": {
+                "输入": {
+                    "action": {
+                        "param": {
+                            "input_text": "{}"
+                        }
+                    }
+                }
+            }
+        },
+        "目标店铺输入": {
+            "type": "text",
+            "title": "请输入目标店铺名称",
+            "default": "嘉旭",
+            "pipeline_override": {
+                "找到并点击商品": {
+                    "recognition": {
+                        "param": {
+                            "expected": [
+                                "{}"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "代付人选择": {
+            "type": "select",
+            "title": "代付链接发送给谁？",
+            "cases": [
+                {
+                    "name": "发送给 Kanbara",
+                    "pipeline_override": {
+                        "发送脚本": {
+                            "action": {
+                                "param": {
+                                    "args": [
+                                        "{RESOURCE_DIR}/send_wechat.py",
+                                        "Kanbara"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "发送给 冥灵",
+                    "pipeline_override": {
+                        "发送脚本": {
+                            "action": {
+                                "param": {
+                                    "args": [
+                                        "{RESOURCE_DIR}/send_wechat.py",
+                                        "冥灵"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    }
 }

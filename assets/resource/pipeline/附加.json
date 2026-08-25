@@ -3,14 +3,14 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1787565391171,
+            "lastSyncTime": 1787641810990,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "D:\\MAA\\maa\\assets\\resource\\pipeline\\附加.json",
             "savedViewport": {
-                "x": 538,
-                "y": 163,
-                "zoom": 1.5
+                "x": -508,
+                "y": -630,
+                "zoom": 0.5
             },
             "filename": "附加",
             "version": "v1.8.1"
@@ -19,105 +19,682 @@
     "$__mpe_external_开始查找商品_附加": {
         "$__mpe_code": {
             "position": {
-                "x": 1352,
-                "y": 1085
+                "x": 3387,
+                "y": 1979
             }
         }
     },
     "开始比价流程": {
-        "next": [
-            "比价_普通1_进商品"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": -21,
-                "y": -153
-            }
-        }
-    },
-    "比价_普通1_列表翻页": {
-        "action": {
-            "type": "Swipe",
+        "recognition": {
+            "type": "OCR",
             "param": {
-                "begin": [
-                    360,
-                    1000,
-                    0,
-                    0
+                "roi": [
+                    21,
+                    17,
+                    688,
+                    300
                 ],
-                "end": [
-                    [
-                        360,
-                        300,
-                        0,
-                        0
-                    ]
+                "expected": [
+                    "(销量|全部|直播)"
                 ]
             }
         },
-        "post_delay": 1500,
         "next": [
-            "比价_普通2_进商品"
+            "普通1_进商品"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 894,
-                "y": 27
+                "x": 41,
+                "y": 822
             }
         }
     },
-    "比价_普通1_滑动": {
+    "普通1_滑动1": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    2,
+                    1395,
+                    718,
+                    203
+                ],
+                "expected": [
+                    "进店|客服"
+                ]
+            }
+        },
         "pre_delay": 2000,
         "action": {
             "type": "Swipe",
             "param": {
                 "begin": [
-                    360,
-                    1000,
-                    0,
-                    0
+                    340,
+                    1197,
+                    1,
+                    1
                 ],
                 "end": [
                     [
-                        360,
-                        400,
-                        0,
-                        0
+                        358,
+                        631,
+                        1,
+                        1
                     ]
                 ]
             }
         },
-        "repeat": 3,
+        "repeat": 1,
         "repeat_delay": 2000,
         "next": [
-            "比价_普通1_返回"
+            "普通1_评论区"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 252,
-                "y": -29
+                "x": 609,
+                "y": 793
             }
         }
     },
-    "比价_普通1_返回": {
-        "action": {
-            "type": "Shell",
+    "普通2_滑动1": {
+        "recognition": {
+            "type": "OCR",
             "param": {
-                "cmd": "input keyevent 4"
+                "roi": [
+                    2,
+                    1395,
+                    718,
+                    203
+                ],
+                "expected": [
+                    "进店|客服"
+                ]
+            }
+        },
+        "pre_delay": 2000,
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    340,
+                    1197,
+                    1,
+                    1
+                ],
+                "end": [
+                    [
+                        358,
+                        631,
+                        1,
+                        1
+                    ]
+                ]
+            }
+        },
+        "repeat": 1,
+        "repeat_delay": 2000,
+        "next": [
+            "普通2_评论区"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 591,
+                "y": 1851
+            }
+        }
+    },
+    "普通1_点击购物车": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "下单按钮.png"
+                ],
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    431,
+                    1497,
+                    247,
+                    76
+                ]
+            }
+        },
+        "post_delay": 5000,
+        "next": [
+            "普通1_返回2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1980,
+                "y": 954
+            }
+        }
+    },
+    "普通2_点击购物车": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "下单按钮.png"
+                ],
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    431,
+                    1497,
+                    247,
+                    76
+                ]
+            }
+        },
+        "post_delay": 5000,
+        "next": [
+            "普通2_返回2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1998,
+                "y": 2008
+            }
+        }
+    },
+    "普通1_评论区": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    29,
+                    415,
+                    682,
+                    844
+                ],
+                "expected": [
+                    "商品评价"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "普通1_评论区滑动"
+        ],
+        "on_error": [
+            "普通1_详情滑动1"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 873,
+                "y": 844
+            }
+        }
+    },
+    "普通2_评论区": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    29,
+                    415,
+                    682,
+                    844
+                ],
+                "expected": [
+                    "商品评价"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "普通2_评论区滑动"
+        ],
+        "on_error": [
+            "普通2_详情滑动1"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 879,
+                "y": 1909
+            }
+        }
+    },
+    "普通1_评论区滑动": {
+        "pre_delay": 2000,
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    340,
+                    1197,
+                    1,
+                    1
+                ],
+                "end": [
+                    [
+                        358,
+                        631,
+                        1,
+                        1
+                    ]
+                ]
+            }
+        },
+        "repeat": 4,
+        "repeat_delay": 2000,
+        "next": [
+            "普通1_返回1"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1151,
+                "y": 860
+            }
+        }
+    },
+    "普通2_评论区滑动": {
+        "pre_delay": 2000,
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    340,
+                    1197,
+                    1,
+                    1
+                ],
+                "end": [
+                    [
+                        358,
+                        631,
+                        1,
+                        1
+                    ]
+                ]
+            }
+        },
+        "repeat": 4,
+        "repeat_delay": 2000,
+        "next": [
+            "普通2_返回1"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1175,
+                "y": 1964
+            }
+        }
+    },
+    "普通1_详情滑动1": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    2,
+                    1395,
+                    718,
+                    203
+                ],
+                "expected": [
+                    "进店|客服"
+                ]
+            }
+        },
+        "pre_delay": 2000,
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    248,
+                    1217,
+                    163,
+                    119
+                ],
+                "end": [
+                    [
+                        271,
+                        333,
+                        114,
+                        88
+                    ]
+                ],
+                "duration": [
+                    1000
+                ]
+            }
+        },
+        "repeat": 7,
+        "repeat_delay": 2000,
+        "next": [
+            "普通1_点击购物车"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1708,
+                "y": 923
+            }
+        }
+    },
+    "普通2_详情滑动1": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    2,
+                    1395,
+                    718,
+                    203
+                ],
+                "expected": [
+                    "进店|客服"
+                ]
+            }
+        },
+        "pre_delay": 2000,
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    248,
+                    1217,
+                    163,
+                    119
+                ],
+                "end": [
+                    [
+                        271,
+                        333,
+                        114,
+                        88
+                    ]
+                ],
+                "duration": [
+                    1000
+                ]
+            }
+        },
+        "repeat": 7,
+        "repeat_delay": 2000,
+        "next": [
+            "普通2_点击购物车"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1732,
+                "y": 2027
+            }
+        }
+    },
+    "普通1_详情滑动2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    2,
+                    1395,
+                    718,
+                    203
+                ],
+                "expected": [
+                    "进店|客服"
+                ]
+            }
+        },
+        "pre_delay": 2000,
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    340,
+                    1197,
+                    1,
+                    1
+                ],
+                "end": [
+                    [
+                        358,
+                        631,
+                        1,
+                        1
+                    ]
+                ],
+                "duration": [
+                    1000
+                ]
+            }
+        },
+        "repeat": 1,
+        "repeat_delay": 2000,
+        "next": [
+            "普通1_返回4"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2489,
+                "y": 961
+            }
+        }
+    },
+    "普通2_详情滑动2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    2,
+                    1395,
+                    718,
+                    203
+                ],
+                "expected": [
+                    "进店|客服"
+                ]
+            }
+        },
+        "pre_delay": 2000,
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    340,
+                    1197,
+                    1,
+                    1
+                ],
+                "end": [
+                    [
+                        358,
+                        631,
+                        1,
+                        1
+                    ]
+                ],
+                "duration": [
+                    1000
+                ]
+            }
+        },
+        "repeat": 1,
+        "repeat_delay": 2000,
+        "next": [
+            "普通2_返回4"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2513,
+                "y": 2065
+            }
+        }
+    },
+    "普通1_返回1": {
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": [
+                    4
+                ]
             }
         },
         "post_delay": 1500,
         "next": [
-            "比价_普通1_列表翻页"
+            "普通1_详情滑动1"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 574,
-                "y": 42
+                "x": 1435,
+                "y": 917
             }
         }
     },
-    "比价_普通1_进商品": {
+    "普通2_返回1": {
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": [
+                    4
+                ]
+            }
+        },
+        "post_delay": 1500,
+        "next": [
+            "普通2_详情滑动1"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1459,
+                "y": 2021
+            }
+        }
+    },
+    "普通1_返回2": {
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": [
+                    4
+                ]
+            }
+        },
+        "post_delay": 1500,
+        "next": [
+            "普通1_详情滑动2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2233,
+                "y": 972
+            }
+        }
+    },
+    "普通2_返回2": {
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": [
+                    4
+                ]
+            }
+        },
+        "post_delay": 1500,
+        "next": [
+            "普通2_详情滑动2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2257,
+                "y": 2076
+            }
+        }
+    },
+    "普通1_返回4": {
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": [
+                    4
+                ]
+            }
+        },
+        "post_delay": 1500,
+        "next": [
+            "普通1翻页"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2782,
+                "y": 960
+            }
+        }
+    },
+    "普通2_返回4": {
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": [
+                    4
+                ]
+            }
+        },
+        "post_delay": 1500,
+        "next": [
+            "普通2翻页"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2806,
+                "y": 2064
+            }
+        }
+    },
+    "普通1_进商品": {
+        "max_hit": 3,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    19,
+                    334,
+                    675,
+                    1143
+                ],
+                "expected": [
+                    "已售\\d000\\+件"
+                ],
+                "index": 0
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    0,
+                    -223,
+                    0,
+                    0
+                ]
+            }
+        },
+        "next": [
+            "普通1_滑动1"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 326,
+                "y": 807
+            }
+        }
+    },
+    "普通2_进商品": {
+        "max_hit": 2,
         "recognition": {
             "type": "OCR",
             "param": {
@@ -137,356 +714,551 @@
             "type": "Click"
         },
         "next": [
-            "比价_普通1_滑动"
+            "普通2_滑动1"
         ],
         "$__mpe_code": {
             "position": {
-                "x": -52,
-                "y": 40
+                "x": 281,
+                "y": 1857
             }
         }
     },
-    "比价_普通2_列表翻页": {
-        "action": {
-            "type": "Swipe",
+    "普通1翻页": {
+        "recognition": {
+            "type": "OCR",
             "param": {
-                "begin": [
-                    360,
-                    1000,
-                    0,
-                    0
+                "roi": [
+                    21,
+                    17,
+                    688,
+                    300
                 ],
-                "end": [
-                    [
-                        360,
-                        300,
-                        0,
-                        0
-                    ]
+                "expected": [
+                    "(销量|全部|直播)"
                 ]
             }
         },
-        "post_delay": 1500,
-        "next": [
-            "比价_普通3_进商品"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 863,
-                "y": 319
-            }
-        }
-    },
-    "比价_普通2_滑动": {
         "pre_delay": 2000,
         "action": {
             "type": "Swipe",
             "param": {
                 "begin": [
-                    360,
-                    1000,
-                    0,
-                    0
+                    358,
+                    1455,
+                    1,
+                    1
                 ],
                 "end": [
                     [
-                        360,
-                        400,
-                        0,
-                        0
+                        370,
+                        208,
+                        1,
+                        1
                     ]
+                ],
+                "duration": [
+                    1000
                 ]
             }
         },
-        "repeat": 3,
+        "repeat": 1,
         "repeat_delay": 2000,
         "next": [
-            "比价_普通2_返回"
+            "普通1_进商品",
+            "高级_进商品"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 223,
-                "y": 289
+                "x": 3058,
+                "y": 744
             }
         }
     },
-    "比价_普通2_返回": {
-        "action": {
-            "type": "Shell",
+    "普通2翻页": {
+        "recognition": {
+            "type": "OCR",
             "param": {
-                "cmd": "input keyevent 4"
-            }
-        },
-        "post_delay": 1500,
-        "next": [
-            "比价_普通2_列表翻页"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 543,
-                "y": 334
-            }
-        }
-    },
-    "比价_普通2_进商品": {
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    360,
-                    600,
-                    0,
-                    0
-                ]
-            }
-        },
-        "next": [
-            "比价_普通2_滑动"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": -97,
-                "y": 362
-            }
-        }
-    },
-    "比价_普通3_列表翻页": {
-        "action": {
-            "type": "Swipe",
-            "param": {
-                "begin": [
-                    360,
-                    1000,
-                    0,
-                    0
+                "roi": [
+                    21,
+                    17,
+                    688,
+                    300
                 ],
-                "end": [
-                    [
-                        360,
-                        300,
-                        0,
-                        0
-                    ]
+                "expected": [
+                    "(销量|全部|直播)"
                 ]
             }
         },
-        "post_delay": 1500,
-        "next": [
-            "比价_高级1_进商品"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 816,
-                "y": 641
-            }
-        }
-    },
-    "比价_普通3_滑动": {
         "pre_delay": 2000,
         "action": {
             "type": "Swipe",
             "param": {
                 "begin": [
-                    360,
-                    1000,
-                    0,
-                    0
+                    358,
+                    1455,
+                    1,
+                    1
                 ],
                 "end": [
                     [
-                        360,
-                        400,
-                        0,
-                        0
+                        370,
+                        208,
+                        1,
+                        1
                     ]
+                ],
+                "duration": [
+                    1000
                 ]
             }
         },
-        "repeat": 3,
+        "repeat": 1,
         "repeat_delay": 2000,
-        "next": [
-            "比价_普通3_返回"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 176,
-                "y": 631
-            }
-        }
-    },
-    "比价_普通3_返回": {
-        "action": {
-            "type": "Shell",
-            "param": {
-                "cmd": "input keyevent 4"
-            }
-        },
-        "post_delay": 1500,
-        "next": [
-            "比价_普通3_列表翻页"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 496,
-                "y": 656
-            }
-        }
-    },
-    "比价_普通3_进商品": {
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    360,
-                    600,
-                    0,
-                    0
-                ]
-            }
-        },
-        "next": [
-            "比价_普通3_滑动"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": -144,
-                "y": 683
-            }
-        }
-    },
-    "比价_高级1_列表翻页": {
-        "action": {
-            "type": "Swipe",
-            "param": {
-                "begin": [
-                    360,
-                    1000,
-                    0,
-                    0
-                ],
-                "end": [
-                    [
-                        360,
-                        300,
-                        0,
-                        0
-                    ]
-                ]
-            }
-        },
-        "post_delay": 1500,
-        "next": [
-            "返回置顶"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 712,
-                "y": 988
-            }
-        }
-    },
-    "比价_高级1_滑动": {
-        "pre_delay": 2000,
-        "action": {
-            "type": "Swipe",
-            "param": {
-                "begin": [
-                    360,
-                    1000,
-                    0,
-                    0
-                ],
-                "end": [
-                    [
-                        360,
-                        400,
-                        0,
-                        0
-                    ]
-                ]
-            }
-        },
-        "repeat": 6,
-        "repeat_delay": 2000,
-        "next": [
-            "比价_高级1_返回"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 72,
-                "y": 958
-            }
-        }
-    },
-    "比价_高级1_返回": {
-        "action": {
-            "type": "Shell",
-            "param": {
-                "cmd": "input keyevent 4"
-            }
-        },
-        "post_delay": 1500,
-        "next": [
-            "比价_高级1_列表翻页"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 392,
-                "y": 1004
-            }
-        }
-    },
-    "比价_高级1_进商品": {
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    360,
-                    600,
-                    0,
-                    0
-                ]
-            }
-        },
-        "next": [
-            "比价_高级1_滑动"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": -248,
-                "y": 1031
-            }
-        }
-    },
-    "返回置顶": {
-        "action": {
-            "type": "Swipe",
-            "param": {
-                "begin": [
-                    360,
-                    300,
-                    0,
-                    0
-                ],
-                "end": [
-                    [
-                        360,
-                        1000,
-                        0,
-                        0
-                    ]
-                ]
-            }
-        },
-        "repeat": 5,
-        "repeat_delay": 1000,
         "next": [
             "开始查找商品"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1032,
-                "y": 973
+                "x": 3082,
+                "y": 1848
+            }
+        }
+    },
+    "比价_阶段2_列表翻页": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    21,
+                    17,
+                    688,
+                    300
+                ],
+                "expected": [
+                    "(销量|全部|直播)"
+                ]
+            }
+        },
+        "pre_delay": 2000,
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    358,
+                    1455,
+                    1,
+                    1
+                ],
+                "end": [
+                    [
+                        370,
+                        208,
+                        1,
+                        1
+                    ]
+                ],
+                "duration": [
+                    1000
+                ]
+            }
+        },
+        "repeat": 1,
+        "repeat_delay": 2000,
+        "next": [
+            "高级_进商品",
+            "普通2_进商品"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3094,
+                "y": 1364
+            }
+        }
+    },
+    "高级_主图": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    2,
+                    1395,
+                    718,
+                    203
+                ],
+                "expected": [
+                    "进店|客服"
+                ]
+            }
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    515,
+                    331,
+                    92,
+                    107
+                ],
+                "end": [
+                    [
+                        124,
+                        315,
+                        81,
+                        88
+                    ]
+                ]
+            }
+        },
+        "repeat": 4,
+        "repeat_delay": 2000,
+        "next": [
+            "高级_滑动"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 303,
+                "y": 1295
+            }
+        }
+    },
+    "高级_滑动": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    2,
+                    1395,
+                    718,
+                    203
+                ],
+                "expected": [
+                    "进店|客服"
+                ]
+            }
+        },
+        "pre_delay": 2000,
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    340,
+                    1197,
+                    1,
+                    1
+                ],
+                "end": [
+                    [
+                        358,
+                        631,
+                        1,
+                        1
+                    ]
+                ]
+            }
+        },
+        "repeat": 1,
+        "repeat_delay": 3000,
+        "next": [
+            "高级_评论区"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 591,
+                "y": 1354
+            }
+        }
+    },
+    "高级_点击购物车": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "下单按钮.png"
+                ],
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    431,
+                    1497,
+                    247,
+                    76
+                ]
+            }
+        },
+        "post_delay": 5000,
+        "next": [
+            "高级_返回2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1985,
+                "y": 1459
+            }
+        }
+    },
+    "高级_评论区": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    29,
+                    415,
+                    682,
+                    844
+                ],
+                "expected": [
+                    "商品评价"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "高级_评论区滑动"
+        ],
+        "on_error": [
+            "高级_详情滑动"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 882,
+                "y": 1377
+            }
+        }
+    },
+    "高级_评论区滑动": {
+        "pre_delay": 2000,
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    340,
+                    1197,
+                    1,
+                    1
+                ],
+                "end": [
+                    [
+                        358,
+                        631,
+                        1,
+                        1
+                    ]
+                ]
+            }
+        },
+        "repeat": 6,
+        "repeat_delay": 3000,
+        "next": [
+            "高级_返回1"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1156,
+                "y": 1365
+            }
+        }
+    },
+    "高级_详情滑动": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    2,
+                    1395,
+                    718,
+                    203
+                ],
+                "expected": [
+                    "进店|客服"
+                ]
+            }
+        },
+        "pre_delay": 2000,
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    248,
+                    1217,
+                    163,
+                    119
+                ],
+                "end": [
+                    [
+                        271,
+                        333,
+                        114,
+                        88
+                    ]
+                ],
+                "duration": [
+                    1000
+                ]
+            }
+        },
+        "repeat": 7,
+        "repeat_delay": 3000,
+        "next": [
+            "高级_点击购物车"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1713,
+                "y": 1428
+            }
+        }
+    },
+    "高级_详情滑动2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    2,
+                    1395,
+                    718,
+                    203
+                ],
+                "expected": [
+                    "进店|客服"
+                ]
+            }
+        },
+        "pre_delay": 2000,
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    340,
+                    1197,
+                    1,
+                    1
+                ],
+                "end": [
+                    [
+                        358,
+                        631,
+                        1,
+                        1
+                    ]
+                ],
+                "duration": [
+                    1000
+                ]
+            }
+        },
+        "repeat": 1,
+        "repeat_delay": 2000,
+        "next": [
+            "高级_返回"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2494,
+                "y": 1465
+            }
+        }
+    },
+    "高级_返回": {
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": [
+                    4
+                ]
+            }
+        },
+        "post_delay": 1500,
+        "next": [
+            "比价_阶段2_列表翻页"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2790,
+                "y": 1464
+            }
+        }
+    },
+    "高级_返回1": {
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": [
+                    4
+                ]
+            }
+        },
+        "post_delay": 1500,
+        "next": [
+            "高级_详情滑动"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1440,
+                "y": 1422
+            }
+        }
+    },
+    "高级_返回2": {
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": [
+                    4
+                ]
+            }
+        },
+        "post_delay": 1500,
+        "next": [
+            "高级_详情滑动2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2247,
+                "y": 1489
+            }
+        }
+    },
+    "高级_进商品": {
+        "max_hit": 2,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    19,
+                    334,
+                    675,
+                    1143
+                ],
+                "expected": [
+                    "已售\\d+万\\+件"
+                ],
+                "index": 0
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    0,
+                    -223,
+                    0,
+                    0
+                ]
+            }
+        },
+        "next": [
+            "高级_主图"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 29,
+                "y": 1290
             }
         }
     }
