@@ -1,9 +1,9 @@
 {
     "interface_version": 2,
-    "name": "极速代付小助手",
-    "description": "自动化比价、下单与微信代付系统",
+    "name": "钢智星小助手",
+    "description": "钢智星ai系统",
     "contact": "联系方式",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "controller": [
         {
             "name": "安卓手机",
@@ -26,13 +26,13 @@
         }
     ],
     "task": [
-        // {
-        //     "name": "1. 切换账号 (预留)",
-        //     "entry": "切换账号节点",
-        //     "group": [
-        //         "main_flow"
-        //     ]
-        // },
+        {
+            "name": "1. 切换账号 (预留)",
+            "entry": "切换账号节点",
+            "group": [
+                "main_flow"
+            ]
+        },
         {
             "name": "2. 主流程：自动比价与下单",
             "entry": "启动并等待",
@@ -42,90 +42,86 @@
             "option": [
                 "商品名称输入",
                 "目标店铺输入",
-                "代付人选择"
+                "代付人输入"
+            ]
+        },
+        {
+            "name": "3. 自动好评 (预留)",
+            "entry": "好评入口节点",
+            "group": [
+                "main_flow"
+            ]
+        },
+        {
+            "name": "4. 关闭应用",
+            "entry": "关闭APP节点",
+            "group": [
+                "main_flow"
             ]
         }
-        // {
-        //     "name": "3. 自动好评 (预留)",
-        //     "entry": "好评入口节点",
-        //     "group": [
-        //         "main_flow"
-        //     ]
-        // },
-        // {
-        //     "name": "4. 关闭应用",
-        //     "entry": "关闭APP节点",
-        //     "group": [
-        //         "main_flow"
-        //     ]
-        // }
     ],
     "option": {
         "商品名称输入": {
-            "type": "text",
-            "title": "请输入商品名称",
-            "default": "骨胶原软骨钙片",
+            "type": "input",
+            "inputs": [
+                {
+                    "name": "商品名",
+                    "default": "骨胶原软骨钙片",
+                    "pipeline_type": "string"
+                }
+            ],
             "pipeline_override": {
                 "输入": {
                     "action": {
                         "param": {
-                            "input_text": "{}"
+                            "input_text": "{商品名}"
                         }
                     }
                 }
             }
         },
         "目标店铺输入": {
-            "type": "text",
-            "title": "请输入目标店铺名称",
-            "default": "嘉旭",
+            "type": "input",
+            "inputs": [
+                {
+                    "name": "店铺名",
+                    "default": "嘉旭",
+                    "pipeline_type": "string"
+                }
+            ],
             "pipeline_override": {
                 "找到并点击商品": {
                     "recognition": {
                         "param": {
                             "expected": [
-                                "{}"
+                                "{店铺名}"
                             ]
                         }
                     }
                 }
             }
         },
-        "代付人选择": {
-            "type": "select",
-            "title": "代付链接发送给谁？",
-            "cases": [
+        "代付人输入": {
+            "type": "input",
+            "inputs": [
                 {
-                    "name": "发送给 Kanbara",
-                    "pipeline_override": {
-                        "发送脚本": {
-                            "action": {
-                                "param": {
-                                    "args": [
-                                        "{RESOURCE_DIR}/send_wechat.py",
-                                        "Kanbara"
-                                    ]
-                                }
-                            }
-                        }
-                    }
-                },
-                {
-                    "name": "发送给 冥灵",
-                    "pipeline_override": {
-                        "发送脚本": {
-                            "action": {
-                                "param": {
-                                    "args": [
-                                        "{RESOURCE_DIR}/send_wechat.py",
-                                        "冥灵"
-                                    ]
-                                }
-                            }
+                    "name": "代付链接发送给谁？",
+                    "default": "钢智星",
+                    "pipeline_type": "string"
+                }
+            ],
+            "pipeline_override": {
+                "发送脚本": {
+                    "action": {
+                        "param": {
+                            "args": [
+                                "{RESOURCE_DIR}/send_wechat.py",
+                                "{代付链接发送给谁？}"
+                            ]
                         }
                     }
                 }
-            ]
+            }
         }
     }
 }

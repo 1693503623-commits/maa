@@ -1,0 +1,39 @@
+{
+    "$__mpe_config_新建Pipeline2": {
+        "$__mpe_code": {
+            "prefix": "",
+            "coordinateMode": "absolute-v1",
+            "savedViewport": {
+                "x": -215,
+                "y": -310,
+                "zoom": 0.44
+            },
+            "filename": "新建Pipeline2",
+            "version": "v1.8.1"
+        }
+    },
+    "切换账号节点": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1588,
+                "y": 1342
+            }
+        }
+    },
+    "好评入口节点": {
+        "$__mpe_code": {
+            "position": {
+                "x": 1928,
+                "y": 1447
+            }
+        }
+    },
+    "关闭APP节点": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2149,
+                "y": 1229
+            }
+        }
+    }
+}

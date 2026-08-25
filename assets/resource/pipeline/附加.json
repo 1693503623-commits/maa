@@ -3,14 +3,14 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1787641810990,
+            "lastSyncTime": 1787642053906,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "D:\\MAA\\maa\\assets\\resource\\pipeline\\附加.json",
             "savedViewport": {
-                "x": -508,
-                "y": -630,
-                "zoom": 0.5
+                "x": -213,
+                "y": -311,
+                "zoom": 0.44
             },
             "filename": "附加",
             "version": "v1.8.1"
@@ -96,53 +96,6 @@
             }
         }
     },
-    "普通2_滑动1": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    2,
-                    1395,
-                    718,
-                    203
-                ],
-                "expected": [
-                    "进店|客服"
-                ]
-            }
-        },
-        "pre_delay": 2000,
-        "action": {
-            "type": "Swipe",
-            "param": {
-                "begin": [
-                    340,
-                    1197,
-                    1,
-                    1
-                ],
-                "end": [
-                    [
-                        358,
-                        631,
-                        1,
-                        1
-                    ]
-                ]
-            }
-        },
-        "repeat": 1,
-        "repeat_delay": 2000,
-        "next": [
-            "普通2_评论区"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 591,
-                "y": 1851
-            }
-        }
-    },
     "普通1_点击购物车": {
         "recognition": {
             "type": "TemplateMatch",
@@ -172,38 +125,6 @@
             "position": {
                 "x": 1980,
                 "y": 954
-            }
-        }
-    },
-    "普通2_点击购物车": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "template": [
-                    "下单按钮.png"
-                ],
-                "green_mask": true
-            }
-        },
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    431,
-                    1497,
-                    247,
-                    76
-                ]
-            }
-        },
-        "post_delay": 5000,
-        "next": [
-            "普通2_返回2"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 1998,
-                "y": 2008
             }
         }
     },
@@ -238,37 +159,6 @@
             }
         }
     },
-    "普通2_评论区": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    29,
-                    415,
-                    682,
-                    844
-                ],
-                "expected": [
-                    "商品评价"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "next": [
-            "普通2_评论区滑动"
-        ],
-        "on_error": [
-            "普通2_详情滑动1"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 879,
-                "y": 1909
-            }
-        }
-    },
     "普通1_评论区滑动": {
         "pre_delay": 2000,
         "action": {
@@ -299,39 +189,6 @@
             "position": {
                 "x": 1151,
                 "y": 860
-            }
-        }
-    },
-    "普通2_评论区滑动": {
-        "pre_delay": 2000,
-        "action": {
-            "type": "Swipe",
-            "param": {
-                "begin": [
-                    340,
-                    1197,
-                    1,
-                    1
-                ],
-                "end": [
-                    [
-                        358,
-                        631,
-                        1,
-                        1
-                    ]
-                ]
-            }
-        },
-        "repeat": 4,
-        "repeat_delay": 2000,
-        "next": [
-            "普通2_返回1"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 1175,
-                "y": 1964
             }
         }
     },
@@ -385,56 +242,6 @@
             }
         }
     },
-    "普通2_详情滑动1": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    2,
-                    1395,
-                    718,
-                    203
-                ],
-                "expected": [
-                    "进店|客服"
-                ]
-            }
-        },
-        "pre_delay": 2000,
-        "action": {
-            "type": "Swipe",
-            "param": {
-                "begin": [
-                    248,
-                    1217,
-                    163,
-                    119
-                ],
-                "end": [
-                    [
-                        271,
-                        333,
-                        114,
-                        88
-                    ]
-                ],
-                "duration": [
-                    1000
-                ]
-            }
-        },
-        "repeat": 7,
-        "repeat_delay": 2000,
-        "next": [
-            "普通2_点击购物车"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 1732,
-                "y": 2027
-            }
-        }
-    },
     "普通1_详情滑动2": {
         "recognition": {
             "type": "OCR",
@@ -482,6 +289,348 @@
             "position": {
                 "x": 2489,
                 "y": 961
+            }
+        }
+    },
+    "普通1_返回1": {
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": [
+                    4
+                ]
+            }
+        },
+        "post_delay": 1500,
+        "next": [
+            "普通1_详情滑动1"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1435,
+                "y": 917
+            }
+        }
+    },
+    "普通1_返回2": {
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": [
+                    4
+                ]
+            }
+        },
+        "post_delay": 1500,
+        "next": [
+            "普通1_详情滑动2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2233,
+                "y": 972
+            }
+        }
+    },
+    "普通1_返回4": {
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": [
+                    4
+                ]
+            }
+        },
+        "post_delay": 1500,
+        "next": [
+            "普通1翻页"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2782,
+                "y": 960
+            }
+        }
+    },
+    "普通1_进商品": {
+        "max_hit": 3,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    19,
+                    334,
+                    675,
+                    1143
+                ],
+                "expected": [
+                    "已售\\d000\\+件"
+                ],
+                "index": 0
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    0,
+                    -223,
+                    0,
+                    0
+                ]
+            }
+        },
+        "next": [
+            "普通1_滑动1"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 326,
+                "y": 807
+            }
+        }
+    },
+    "普通1翻页": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    21,
+                    17,
+                    688,
+                    300
+                ],
+                "expected": [
+                    "(销量|全部|直播)"
+                ]
+            }
+        },
+        "pre_delay": 2000,
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    358,
+                    1455,
+                    1,
+                    1
+                ],
+                "end": [
+                    [
+                        370,
+                        208,
+                        1,
+                        1
+                    ]
+                ],
+                "duration": [
+                    1000
+                ]
+            }
+        },
+        "repeat": 1,
+        "repeat_delay": 2000,
+        "next": [
+            "普通1_进商品",
+            "高级_进商品"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 3058,
+                "y": 744
+            }
+        }
+    },
+    "普通2_滑动1": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    2,
+                    1395,
+                    718,
+                    203
+                ],
+                "expected": [
+                    "进店|客服"
+                ]
+            }
+        },
+        "pre_delay": 2000,
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    340,
+                    1197,
+                    1,
+                    1
+                ],
+                "end": [
+                    [
+                        358,
+                        631,
+                        1,
+                        1
+                    ]
+                ]
+            }
+        },
+        "repeat": 1,
+        "repeat_delay": 2000,
+        "next": [
+            "普通2_评论区"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 591,
+                "y": 1851
+            }
+        }
+    },
+    "普通2_点击购物车": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "下单按钮.png"
+                ],
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    431,
+                    1497,
+                    247,
+                    76
+                ]
+            }
+        },
+        "post_delay": 5000,
+        "next": [
+            "普通2_返回2"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1998,
+                "y": 2008
+            }
+        }
+    },
+    "普通2_评论区": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    29,
+                    415,
+                    682,
+                    844
+                ],
+                "expected": [
+                    "商品评价"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "普通2_评论区滑动"
+        ],
+        "on_error": [
+            "普通2_详情滑动1"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 879,
+                "y": 1909
+            }
+        }
+    },
+    "普通2_评论区滑动": {
+        "pre_delay": 2000,
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    340,
+                    1197,
+                    1,
+                    1
+                ],
+                "end": [
+                    [
+                        358,
+                        631,
+                        1,
+                        1
+                    ]
+                ]
+            }
+        },
+        "repeat": 4,
+        "repeat_delay": 2000,
+        "next": [
+            "普通2_返回1"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1175,
+                "y": 1964
+            }
+        }
+    },
+    "普通2_详情滑动1": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    2,
+                    1395,
+                    718,
+                    203
+                ],
+                "expected": [
+                    "进店|客服"
+                ]
+            }
+        },
+        "pre_delay": 2000,
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    248,
+                    1217,
+                    163,
+                    119
+                ],
+                "end": [
+                    [
+                        271,
+                        333,
+                        114,
+                        88
+                    ]
+                ],
+                "duration": [
+                    1000
+                ]
+            }
+        },
+        "repeat": 7,
+        "repeat_delay": 2000,
+        "next": [
+            "普通2_点击购物车"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1732,
+                "y": 2027
             }
         }
     },
@@ -535,26 +684,6 @@
             }
         }
     },
-    "普通1_返回1": {
-        "action": {
-            "type": "ClickKey",
-            "param": {
-                "key": [
-                    4
-                ]
-            }
-        },
-        "post_delay": 1500,
-        "next": [
-            "普通1_详情滑动1"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 1435,
-                "y": 917
-            }
-        }
-    },
     "普通2_返回1": {
         "action": {
             "type": "ClickKey",
@@ -572,26 +701,6 @@
             "position": {
                 "x": 1459,
                 "y": 2021
-            }
-        }
-    },
-    "普通1_返回2": {
-        "action": {
-            "type": "ClickKey",
-            "param": {
-                "key": [
-                    4
-                ]
-            }
-        },
-        "post_delay": 1500,
-        "next": [
-            "普通1_详情滑动2"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 2233,
-                "y": 972
             }
         }
     },
@@ -615,26 +724,6 @@
             }
         }
     },
-    "普通1_返回4": {
-        "action": {
-            "type": "ClickKey",
-            "param": {
-                "key": [
-                    4
-                ]
-            }
-        },
-        "post_delay": 1500,
-        "next": [
-            "普通1翻页"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 2782,
-                "y": 960
-            }
-        }
-    },
     "普通2_返回4": {
         "action": {
             "type": "ClickKey",
@@ -652,44 +741,6 @@
             "position": {
                 "x": 2806,
                 "y": 2064
-            }
-        }
-    },
-    "普通1_进商品": {
-        "max_hit": 3,
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    19,
-                    334,
-                    675,
-                    1143
-                ],
-                "expected": [
-                    "已售\\d000\\+件"
-                ],
-                "index": 0
-            }
-        },
-        "action": {
-            "type": "Click",
-            "param": {
-                "target_offset": [
-                    0,
-                    -223,
-                    0,
-                    0
-                ]
-            }
-        },
-        "next": [
-            "普通1_滑动1"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 326,
-                "y": 807
             }
         }
     },
@@ -720,57 +771,6 @@
             "position": {
                 "x": 281,
                 "y": 1857
-            }
-        }
-    },
-    "普通1翻页": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    21,
-                    17,
-                    688,
-                    300
-                ],
-                "expected": [
-                    "(销量|全部|直播)"
-                ]
-            }
-        },
-        "pre_delay": 2000,
-        "action": {
-            "type": "Swipe",
-            "param": {
-                "begin": [
-                    358,
-                    1455,
-                    1,
-                    1
-                ],
-                "end": [
-                    [
-                        370,
-                        208,
-                        1,
-                        1
-                    ]
-                ],
-                "duration": [
-                    1000
-                ]
-            }
-        },
-        "repeat": 1,
-        "repeat_delay": 2000,
-        "next": [
-            "普通1_进商品",
-            "高级_进商品"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 3058,
-                "y": 744
             }
         }
     },
