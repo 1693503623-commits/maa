@@ -113,10 +113,30 @@ def install_resource():
         install_path,
     )
 
+    # 复制图标到包根目录（与 interface.json 的 "icon" 字段对应，GUI 从根目录读取）
+    logo_src = working_dir / "assets" / "logo.ico"
+    if logo_src.exists():
+        shutil.copy2(logo_src, install_path)
+        print("  [install] copied logo.ico -> install/logo.ico")
+    else:
+        print("  [warn] assets/logo.ico not found, icon will be missing in package")
+
     with open(install_path / "interface.json", "r", encoding="utf-8") as f:
         interface = jsonc.load(f)
 
     interface["version"] = version
+
+    # 打包后 interface.json 与 agent/ 同级（都摊平到 install/ 根目录），
+    # 开发期写的 "../agent/main.py" 相对 install/ 会解析到错误位置，
+    # 需改回 "agent/main.py"（MaaFramework 约定：child_args 以 interface.json 所在目录为 CWD）
+    for agent_cfg in interface.get("agent", []):
+        if agent_cfg.get("child_args"):
+            agent_cfg["child_args"] = [
+                "../agent/main.py" if a == "agent/main.py" else
+                "agent/main.py" if a == "../agent/main.py" else
+                a
+                for a in agent_cfg["child_args"]
+            ]
 
     with open(install_path / "interface.json", "w", encoding="utf-8") as f:
         jsonc.dump(interface, f, ensure_ascii=False, indent=4)

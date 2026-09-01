@@ -1,0 +1,42 @@
+{
+    "$__mpe_config_关闭账号_预留": {
+        "$__mpe_code": {
+            "prefix": "",
+            "coordinateMode": "absolute-v1",
+            "lastSyncTime": 1788250944977,
+            "isModifiedExternally": false,
+            "isDeleted": false,
+            "filePath": "D:\\MAA\\maa\\assets\\resource\\pipeline\\预留.json",
+            "savedViewport": {
+                "x": -986,
+                "y": -650,
+                "zoom": 0.75
+            },
+            "filename": "关闭账号_预留",
+            "version": "v1.9.2"
+        }
+    },
+    "关闭APP节点": {
+        "action": {
+            "type": "StopApp",
+            "param": {
+                "package": "com.ss.android.ugc.livelite"
+            }
+        },
+        "focus": "任务全部完成，已清理后台退出！",
+        "$__mpe_code": {
+            "position": {
+                "x": 1797,
+                "y": 1290
+            }
+        }
+    },
+    "切换账号节点": {
+        "$__mpe_code": {
+            "position": {
+                "x": 2173,
+                "y": 1084
+            }
+        }
+    }
+}

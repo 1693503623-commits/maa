@@ -1,0 +1,330 @@
+{
+    "$__mpe_config_评价": {
+        "$__mpe_code": {
+            "prefix": "",
+            "coordinateMode": "absolute-v1",
+            "lastSyncTime": 1788249253916,
+            "isModifiedExternally": false,
+            "isDeleted": false,
+            "filePath": "D:\\MAA\\maa\\assets\\resource\\pipeline\\评价.json",
+            "savedViewport": {
+                "x": 424,
+                "y": 310,
+                "zoom": 0.75
+            },
+            "filename": "评价",
+            "version": "v1.9.2"
+        }
+    },
+    "主页_点击我": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    18,
+                    1486,
+                    701,
+                    115
+                ],
+                "expected": [
+                    "我"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 2000,
+        "next": [
+            "点击我的订单"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 332,
+                "y": -125
+            }
+        }
+    },
+    "五星": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "请评分"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": true,
+                "target_offset": [
+                    -121,
+                    -24,
+                    41,
+                    42
+                ]
+            }
+        },
+        "next": [
+            "评价流程结束"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 2206,
+                "y": -94
+            }
+        }
+    },
+    "启动等待好评": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    18,
+                    1486,
+                    701,
+                    115
+                ],
+                "expected": [
+                    "首页"
+                ]
+            }
+        },
+        "post_delay": 2000,
+        "next": [
+            "主页_点击我"
+        ],
+        "on_error": [
+            "打开app"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -92,
+                "y": -144
+            }
+        }
+    },
+    "打开app": {
+        "action": {
+            "type": "StartApp",
+            "param": {
+                "package": "com.ss.android.ugc.livelite"
+            }
+        },
+        "focus": "com.ss.android.ugc.livelite",
+        "next": [
+            "启动等待好评"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 36,
+                "y": 217
+            }
+        }
+    },
+    "检测编号": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    12,
+                    288,
+                    692,
+                    780
+                ],
+                "expected": [
+                    "\\d{18,}"
+                ]
+            }
+        },
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "ProcessReview"
+            }
+        },
+        "post_delay": 1500,
+        "focus": "📖 成功定位单号并呼叫 Python 提取数据...",
+        "next": [
+            "点击确认收货_去评价"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1268,
+                "y": -33
+            }
+        }
+    },
+    "点击商品": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    22,
+                    234,
+                    687,
+                    1300
+                ],
+                "expected": [
+                    "待收货"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target_offset": [
+                    -276,
+                    136,
+                    258,
+                    77
+                ]
+            }
+        },
+        "post_delay": 2500,
+        "next": [
+            "检测编号"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 949,
+                "y": -178
+            }
+        }
+    },
+    "点击我的订单": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "我的订单"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 2000,
+        "next": [
+            "点击商品"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 652,
+                "y": 43
+            }
+        }
+    },
+    "点击确认": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    12,
+                    288,
+                    692,
+                    780
+                ],
+                "expected": [
+                    "确认"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "点击输入框并填入文本"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1730,
+                "y": -295
+            }
+        }
+    },
+    "点击确认收货_去评价": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    4,
+                    1304,
+                    714,
+                    296
+                ],
+                "expected": [
+                    "确认收货|去评价"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 2000,
+        "focus": "✅ 成功匹配单号: {order_id}，准备点击评价...",
+        "next": [
+            "点击确认"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1545,
+                "y": -40
+            }
+        }
+    },
+    "点击输入框并填入文本": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    8,
+                    69,
+                    712,
+                    839
+                ],
+                "expected": [
+                    "商品评分"
+                ]
+            }
+        },
+        "action": {
+            "type": "InputText",
+            "param": {
+                "input_text": "{review_text}"
+            }
+        },
+        "post_delay": 1500,
+        "focus": "✍️ 成功从 Python 获取文本并自动填入！",
+        "next": [
+            "五星"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1924,
+                "y": -44
+            }
+        }
+    },
+    "评价流程结束": {
+        "focus": "✅ 单个商品评价完毕",
+        "$__mpe_code": {
+            "position": {
+                "x": 2473,
+                "y": -24
+            }
+        }
+    },
+    "好评入口节点": {
+        "next": [
+            "启动等待好评"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -378,
+                "y": -125
+            }
+        }
+    }
+}

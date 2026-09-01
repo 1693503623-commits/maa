@@ -3,17 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1787562084783,
+            "lastSyncTime": 1787901881452,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "D:\\MAA\\maa\\assets\\resource\\pipeline\\pay.json",
             "savedViewport": {
-                "x": 38,
-                "y": 329,
-                "zoom": 0.37
+                "x": 244,
+                "y": -82,
+                "zoom": 1
             },
             "filename": "pay",
-            "version": "v1.8.1"
+            "version": "v1.9.2"
         }
     },
     "下单": {
@@ -36,13 +36,26 @@
             "type": "Click"
         },
         "post_delay": 2000,
+        "focus": "✅ 订单生成完毕，准备执行通知...",
         "next": [
             "复制"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1036,
-                "y": 12
+                "x": 1292,
+                "y": 296
+            }
+        }
+    },
+    "保存截图": {
+        "action": {
+            "type": "Screencap"
+        },
+        "focus": "📸 代付二维码已成功截图！请在 debug 目录查看并扫码。",
+        "$__mpe_code": {
+            "position": {
+                "x": 1921,
+                "y": 646
             }
         }
     },
@@ -57,10 +70,11 @@
                 ]
             }
         },
+        "focus": "🚀 已呼叫 Python 脚本发送微信！",
         "$__mpe_code": {
             "position": {
-                "x": 1549,
-                "y": 72
+                "x": 1932,
+                "y": 359
             }
         }
     },
@@ -83,13 +97,14 @@
             "type": "Click"
         },
         "post_delay": 2000,
+        "focus": "📋 尝试复制口令中...",
         "next": [
             "发送脚本"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1293,
-                "y": 41
+                "x": 1616,
+                "y": 299
             }
         }
     },
@@ -105,13 +120,14 @@
         "action": {
             "type": "Click"
         },
+        "focus": "🤝 找到代付按钮，准备点击...",
         "next": [
             "下单"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 780,
-                "y": 85
+                "x": 972,
+                "y": 357
             }
         }
     },
@@ -143,8 +159,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 524,
-                "y": 165
+                "x": 652,
+                "y": 207
             }
         }
     },
@@ -173,8 +189,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 268,
-                "y": 55
+                "x": 321,
+                "y": 336
             }
         }
     },
@@ -197,13 +213,14 @@
         "action": {
             "type": "Click"
         },
+        "focus": "🛒 开始购买流程...",
         "next": [
             "规格"
         ],
         "$__mpe_code": {
             "position": {
                 "x": 12,
-                "y": 49
+                "y": 303
             }
         }
     }

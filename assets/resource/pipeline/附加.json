@@ -8,8 +8,8 @@
             "isDeleted": false,
             "filePath": "D:\\MAA\\maa\\assets\\resource\\pipeline\\附加.json",
             "savedViewport": {
-                "x": -213,
-                "y": -311,
+                "x": 325,
+                "y": -220,
                 "zoom": 0.44
             },
             "filename": "附加",
@@ -39,6 +39,7 @@
                 ]
             }
         },
+        "focus": "🔎 开始比价目标流程...",
         "next": [
             "普通1_进商品"
         ],
@@ -342,6 +343,7 @@
             }
         },
         "post_delay": 1500,
+        "focus": "完成普通比价",
         "next": [
             "普通1翻页"
         ],
@@ -734,6 +736,7 @@
             }
         },
         "post_delay": 1500,
+        "focus": "完成普通比价",
         "next": [
             "普通2翻页"
         ],
@@ -870,8 +873,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 3094,
-                "y": 1364
+                "x": 3082,
+                "y": 1300
             }
         }
     },
@@ -1174,6 +1177,7 @@
             }
         },
         "post_delay": 1500,
+        "focus": "完成高级比价",
         "next": [
             "比价_阶段2_列表翻页"
         ],

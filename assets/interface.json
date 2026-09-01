@@ -2,8 +2,8 @@
     "interface_version": 2,
     "name": "钢智星小助手",
     "description": "钢智星ai系统",
-    "contact": "联系方式",
     "version": "1.0.2",
+    "icon": "logo.ico",
     "controller": [
         {
             "name": "安卓手机",
@@ -25,6 +25,15 @@
             "label": "核心代付流程"
         }
     ],
+    "agent": [
+        {
+            "child_exec": "C:\\Users\\StellarAI\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+            "child_args": [
+                "-u",
+                "../agent/main.py"
+            ]
+        }
+    ],
     "task": [
         {
             "name": "1. 切换账号 (预留)",
@@ -34,26 +43,36 @@
             ]
         },
         {
-            "name": "2. 主流程：自动比价与下单",
+            "name": "2. 主流程：自动比价与选品",
             "entry": "启动并等待",
             "group": [
                 "main_flow"
             ],
             "option": [
                 "商品名称输入",
-                "目标店铺输入",
+                "目标店铺输入"
+            ]
+        },
+        {
+            "name": "3. 自动代付与通知",
+            "entry": "购买",
+            "group": [
+                "main_flow"
+            ],
+            "option": [
+                "通知方式选择",
                 "代付人输入"
             ]
         },
         {
-            "name": "3. 自动好评 (预留)",
+            "name": "4. 自动好评",
             "entry": "好评入口节点",
             "group": [
                 "main_flow"
             ]
         },
         {
-            "name": "4. 关闭应用",
+            "name": "5. 关闭应用",
             "entry": "关闭APP节点",
             "group": [
                 "main_flow"
@@ -61,6 +80,32 @@
         }
     ],
     "option": {
+        "通知方式选择": {
+            "type": "select",
+            "title": "代付通知方式",
+            "cases": [
+                {
+                    "name": "直接保存手机截图",
+                    "pipeline_override": {
+                        "下单": {
+                            "next": [
+                                "保存截图"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "复制口令并发送微信 (需确保剪贴板同步)",
+                    "pipeline_override": {
+                        "下单": {
+                            "next": [
+                                "复制"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
         "商品名称输入": {
             "type": "input",
             "inputs": [
@@ -105,8 +150,8 @@
             "type": "input",
             "inputs": [
                 {
-                    "name": "代付链接发送给谁？",
-                    "default": "钢智星",
+                    "name": "发送给谁",
+                    "default": "Kanbara",
                     "pipeline_type": "string"
                 }
             ],
@@ -116,7 +161,7 @@
                         "param": {
                             "args": [
                                 "{RESOURCE_DIR}/send_wechat.py",
-                                "{代付链接发送给谁？}"
+                                "{发送给谁}"
                             ]
                         }
                     }

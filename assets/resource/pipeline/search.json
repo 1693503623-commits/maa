@@ -3,24 +3,32 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1787563885642,
+            "lastSyncTime": 1788162663151,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "D:\\MAA\\maa\\assets\\resource\\pipeline\\search.json",
             "savedViewport": {
-                "x": -401,
-                "y": 185,
-                "zoom": 0.65
+                "x": -62,
+                "y": 358,
+                "zoom": 0.49
             },
             "filename": "search",
-            "version": "v1.8.1"
+            "version": "v1.9.2"
+        }
+    },
+    "$__mpe_external_开始比价流程_search": {
+        "$__mpe_code": {
+            "position": {
+                "x": 896,
+                "y": 68
+            }
         }
     },
     "$__mpe_external_购买_search": {
         "$__mpe_code": {
             "position": {
-                "x": 1882,
-                "y": 319
+                "x": 1989,
+                "y": 220
             }
         }
     },
@@ -39,19 +47,16 @@
                 ]
             }
         },
-        "action": {
-            "type": "StartApp",
-            "param": {
-                "package": "com.ss.android.ugc.livelite"
-            }
-        },
         "next": [
             "点击搜索框"
         ],
+        "on_error": [
+            "启动app"
+        ],
         "$__mpe_code": {
             "position": {
-                "x": 12,
-                "y": 192
+                "x": 84,
+                "y": 151
             }
         }
     },
@@ -70,6 +75,7 @@
                 ]
             }
         },
+        "focus": "比价完成，开始查找商品",
         "next": [
             "没找到_向上滑动1",
             "找到并点击商品"
@@ -102,13 +108,14 @@
                 ]
             }
         },
+        "focus": "成功找到目标店铺，准备点击下单",
         "next": [
             "模拟浏览_滑动5次"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1384,
-                "y": 352
+                "x": 1410,
+                "y": 306
             }
         }
     },
@@ -149,8 +156,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1627,
-                "y": 92
+                "x": 1690,
+                "y": 69
             }
         }
     },
@@ -182,8 +189,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1392,
-                "y": -31
+                "x": 1425,
+                "y": -76
             }
         }
     },
@@ -210,8 +217,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 745,
-                "y": 196
+                "x": 887,
+                "y": 188
             }
         }
     },
@@ -234,14 +241,14 @@
         "action": {
             "type": "Click"
         },
-        "post_delay": 2000,
+        "post_delay": 3000,
         "next": [
             "输入"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 253,
-                "y": 161
+                "x": 395,
+                "y": 153
             }
         }
     },
@@ -252,22 +259,31 @@
                 "input_text": "骨胶原软骨钙片"
             }
         },
-        "post_delay": 2000,
+        "post_delay": 3000,
         "next": [
             "点击搜索"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 496,
-                "y": 189
+                "x": 638,
+                "y": 181
             }
         }
     },
-    "$__mpe_external_开始比价流程_search": {
+    "启动app": {
+        "action": {
+            "type": "StopApp",
+            "param": {
+                "package": "com.ss.android.ugc.livelite"
+            }
+        },
+        "next": [
+            "启动并等待"
+        ],
         "$__mpe_code": {
             "position": {
-                "x": 754,
-                "y": 76
+                "x": 92,
+                "y": 414
             }
         }
     }
