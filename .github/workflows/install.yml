@@ -72,8 +72,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        os: [win]
-        arch: [x86_64]
+        os: [win, macos, linux, android]
+        arch: [aarch64, x86_64]
       fail-fast: false
 
     steps:
@@ -116,7 +116,7 @@ jobs:
         shell: bash
         run: |
           rm -rf MFA/runtimes
-      
+
       - name: Install
         shell: bash
         run: |
@@ -183,7 +183,7 @@ jobs:
           for f in *; do
             (cd $f && zip -r ../$f-${{ needs.meta.outputs.tag }}.zip .)
           done
-          
+
       - uses: softprops/action-gh-release@v2
         with:
           files: assets/*
