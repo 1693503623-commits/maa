@@ -27,7 +27,7 @@
     ],
     "agent": [
         {
-            "child_exec": "C:\\Users\\StellarAI\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+            "child_exec": "C:\\Users\\kuriyama\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
             "child_args": [
                 "-u",
                 "../agent/main.py"
