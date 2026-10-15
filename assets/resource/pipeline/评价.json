@@ -3,17 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1788249253916,
+            "lastSyncTime": 1788256046291,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "D:\\MAA\\maa\\assets\\resource\\pipeline\\评价.json",
             "savedViewport": {
-                "x": 424,
-                "y": 310,
-                "zoom": 0.75
+                "x": 397,
+                "y": 280,
+                "zoom": 0.44
             },
             "filename": "评价",
-            "version": "v1.9.2"
+            "version": "v1.9.3"
         }
     },
     "主页_点击我": {
@@ -105,6 +105,17 @@
             }
         }
     },
+    "好评入口节点": {
+        "next": [
+            "启动等待好评"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -378,
+                "y": -125
+            }
+        }
+    },
     "打开app": {
         "action": {
             "type": "StartApp",
@@ -112,14 +123,13 @@
                 "package": "com.ss.android.ugc.livelite"
             }
         },
-        "focus": "com.ss.android.ugc.livelite",
         "next": [
             "启动等待好评"
         ],
         "$__mpe_code": {
             "position": {
-                "x": 36,
-                "y": 217
+                "x": -70,
+                "y": 212
             }
         }
     },
@@ -212,7 +222,7 @@
         "$__mpe_code": {
             "position": {
                 "x": 652,
-                "y": 43
+                "y": -152
             }
         }
     },
@@ -313,17 +323,6 @@
             "position": {
                 "x": 2473,
                 "y": -24
-            }
-        }
-    },
-    "好评入口节点": {
-        "next": [
-            "启动等待好评"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": -378,
-                "y": -125
             }
         }
     }

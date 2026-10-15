@@ -3,17 +3,17 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1787642053906,
+            "lastSyncTime": 1788256056577,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "D:\\MAA\\maa\\assets\\resource\\pipeline\\附加.json",
             "savedViewport": {
-                "x": 325,
-                "y": -220,
-                "zoom": 0.44
+                "x": 292,
+                "y": -64,
+                "zoom": 0.43
             },
             "filename": "附加",
-            "version": "v1.8.1"
+            "version": "v1.9.3"
         }
     },
     "$__mpe_external_开始查找商品_附加": {
@@ -29,10 +29,10 @@
             "type": "OCR",
             "param": {
                 "roi": [
+                    14,
                     21,
-                    17,
-                    688,
-                    300
+                    697,
+                    626
                 ],
                 "expected": [
                     "(销量|全部|直播)"
@@ -45,8 +45,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 41,
-                "y": 822
+                "x": -77,
+                "y": 685
             }
         }
     },
@@ -385,10 +385,13 @@
         "next": [
             "普通1_滑动1"
         ],
+        "on_error": [
+            "普通1翻页"
+        ],
         "$__mpe_code": {
             "position": {
-                "x": 326,
-                "y": 807
+                "x": 284,
+                "y": 640
             }
         }
     },
@@ -1112,8 +1115,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 1713,
-                "y": 1428
+                "x": 1722,
+                "y": 1425
             }
         }
     },

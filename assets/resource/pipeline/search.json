@@ -3,17 +3,28 @@
         "$__mpe_code": {
             "prefix": "",
             "coordinateMode": "absolute-v1",
-            "lastSyncTime": 1788162663151,
+            "lastSyncTime": 1788256051162,
             "isModifiedExternally": false,
             "isDeleted": false,
             "filePath": "D:\\MAA\\maa\\assets\\resource\\pipeline\\search.json",
             "savedViewport": {
-                "x": -62,
-                "y": 358,
-                "zoom": 0.49
+                "x": -287,
+                "y": 252,
+                "zoom": 0.43
             },
             "filename": "search",
-            "version": "v1.9.2"
+            "version": "v1.9.3"
+        }
+    },
+    "开始": {
+        "next": [
+            "启动app"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -526,
+                "y": 101
+            }
         }
     },
     "$__mpe_external_开始比价流程_search": {
@@ -29,6 +40,23 @@
             "position": {
                 "x": 1989,
                 "y": 220
+            }
+        }
+    },
+    "启动app": {
+        "action": {
+            "type": "StartApp",
+            "param": {
+                "package": "com.ss.android.ugc.livelite"
+            }
+        },
+        "next": [
+            "启动并等待"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": -230,
+                "y": 91
             }
         }
     },
@@ -55,8 +83,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 84,
-                "y": 151
+                "x": 53,
+                "y": 71
             }
         }
     },
@@ -199,10 +227,10 @@
             "type": "OCR",
             "param": {
                 "roi": [
-                    547,
-                    18,
-                    173,
-                    187
+                    24,
+                    15,
+                    679,
+                    215
                 ],
                 "expected": [
                     "搜索"
@@ -212,6 +240,7 @@
         "action": {
             "type": "Click"
         },
+        "post_delay": 1000,
         "next": [
             "开始比价流程"
         ],
@@ -247,8 +276,8 @@
         ],
         "$__mpe_code": {
             "position": {
-                "x": 395,
-                "y": 153
+                "x": 351,
+                "y": 99
             }
         }
     },
@@ -256,7 +285,7 @@
         "action": {
             "type": "InputText",
             "param": {
-                "input_text": "骨胶原软骨钙片"
+                "input_text": "菊花茶"
             }
         },
         "post_delay": 3000,
@@ -267,23 +296,6 @@
             "position": {
                 "x": 638,
                 "y": 181
-            }
-        }
-    },
-    "启动app": {
-        "action": {
-            "type": "StopApp",
-            "param": {
-                "package": "com.ss.android.ugc.livelite"
-            }
-        },
-        "next": [
-            "启动并等待"
-        ],
-        "$__mpe_code": {
-            "position": {
-                "x": 92,
-                "y": 414
             }
         }
     }
